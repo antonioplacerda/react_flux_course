@@ -20,7 +20,6 @@ class CourseStore extends EventEmitter {
   }
 
   getCourses() {
-    console.log(_courses);
     return _courses;
   }
 

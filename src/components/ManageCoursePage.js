@@ -21,10 +21,14 @@ const ManageCoursePage = (props) => {
     if (courses.length === 0) {
       courseActions.loadCourses();
     } else if (slug) {
-      setCourse(courseStore.getCourseBySlug(slug));
+      const _course = courseStore.getCourseBySlug(slug);
+      if (_course == null) {
+        props.history.push("/courses");
+      }
+      setCourse(_course);
     }
     return () => courseStore.removeChangeListener(onChange);
-  }, [courses.length, props.match.params.slug]);
+  }, [courses.length, props.match.params.slug, props.history]);
 
   function onChange() {
     setCourses(courseStore.getCourses());
