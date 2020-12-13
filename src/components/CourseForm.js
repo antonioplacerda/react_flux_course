@@ -25,7 +25,11 @@ function CourseForm(props) {
             onChange={props.onChange}
           >
             <option value="" />
-            <option value="1">Cory House</option>
+            {props.authors.map((author) => (
+              <option key={author.id} value={author.id}>
+                {author.name}
+              </option>
+            ))}
           </select>
         </div>
         {props.errors.authorId && (
