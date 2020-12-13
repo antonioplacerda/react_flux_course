@@ -20,7 +20,7 @@ class CourseStore extends EventEmitter {
   }
 
   getCourses() {
-    console.log(_courses)
+    console.log(_courses);
     return _courses;
   }
 
@@ -36,7 +36,12 @@ Dispatcher.register((action) => {
       _courses.push(action.course);
       store.emitChange();
       break;
+    case actionTypes.LOAD_COURSES:
+      _courses = action.courses;
+      store.emitChange();
+      break;
     default: // nothing to do
   }
 });
+
 export default store;
