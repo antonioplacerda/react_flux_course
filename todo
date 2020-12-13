@@ -1,5 +1,5 @@
 [x] Show 404 page for bogus slug
 [x] Display author name on coursespage
 [x] populate author dropdown via api data
-[] create a reusable dropdown component
+[x] create a reusable dropdown component
 [] add author management
