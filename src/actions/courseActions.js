@@ -21,3 +21,12 @@ export function loadCourses(course) {
     });
   });
 }
+
+export function deleteCourse(courseId) {
+  return courseApi.deleteCourse(courseId).then(() => {
+    dispatcher.dispatch({
+      actionType: actionTypes.DELETE_COURSE,
+      courseId,
+    });
+  });
+}
